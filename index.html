@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* General Style */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Header */
+        #header {
+            background: linear-gradient(135deg, #2b2a2a,#080808);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        #header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        #header h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+
+        #header h1 span {
+            color: #efc97e;
+        }
+
+        #header p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        #header nav {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        #header nav i {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .header-txt h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .header-txt p {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #eeeeee;
+            margin-top: 10px;
+        }
+
+        /* Hover effects for the header */
+        #header:hover {
+            background: linear-gradient(135deg, #363333, #0a0a0a);
+        }
+
+        /* About Section */
+        #about {
+            background: #f7f7f7;
+            padding: 50px 0;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .about-col-2 {
+            text-align: center;
+        }
+
+        .tab-links {
+            display: inline-block;
+            font-size: 1.2rem;
+            color: #333;
+            margin: 10px 20px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .tab-links.active-link,
+        .tab-links:hover {
+            background-color: #efc97e;
+            color: white;
+        }
+
+        .tab-contents ul {
+            list-style-type: none;
+        }
+
+        .tab-contents span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background: #c4c4c2;
+            padding: 50px 0;
+        }
+
+        .project-item {
+            background: linear-gradient(135deg, #b49d6a, #9e8a42);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .project-item p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .projects {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .projects .project-item {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            #header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header-txt p {
+                font-size: 1.1rem;
+            }
+
+            .projects .project-item {
+                width: 100%;
+            }
+
+            .sub-title {
+                font-size: 2rem;
+            }
+
+            .project-item h3 {
+                font-size: 1.5rem;
+            }
+
+            .project-item p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Footer / Contact Section */
+        #contact {
+            background: #c4c4c2;
+            padding: 50px 0;
+        }
+
+        #contact .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #contact .contact-left p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .social-icons a {
+            font-size: 2rem;
+            color: #333;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #efc97e;
+        }
+
+        .btn2 {
+            background: #333;
+            color: #efc97e;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .btn2:hover {
+            background: #efc97e;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container-fluid">
+            <nav>
+                <img src="" alt="">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">My Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-txt">
+                <h1>Hi,<br>I'm <span>Keerthi Raikar</span></h1>
+                <p>An aspiring <strong>Data Analyst</strong> eager to turn raw data into actionable insights.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container-fluid">
+            <h1 class="sub-title">About Me</h1>
+            <p>I am a passionate data enthusiast skilled in Python, Machine Learning, and Big Data Analytics. My goal is to contribute to data-driven solutions that empower decision-making and business growth.</p>
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experience')">Internship Experience</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+
+            <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>HTML</span></li>
+                    <li><span>Machine Learning</span></li>
+                    <li><span>SQL</span></li>
+                    <li><span>Python</span></li>
+                    <li><span>Java</span></li>
+                    <li><span>Big Data Analytics</span></li>
+                </ul>
+            </div>
+
+            <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span>Feb 2024 - July 2024</span><br>Worked as a machine learning research intern. Developed a machine learning model using meta-heuristics algorithms optimized for parallel job scheduling.</li>
+                </ul>
+            </div>
+
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>2025 (Expected)</span><br>Bachelor of Computer Applications (B.C.A)</li>
+                    <li><span>2022</span><br>Pre-University Education (PCMB)</li>
+                    <li><span>2020</span><br>SSLC</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio">
+        <div class="container-fluid">
+            <h1 class="sub-title">My Work</h1>
+            <section id="projects" class="projects">
+                <div class="project-item">
+                    <h3>Parallel Job Scheduling</h3>
+                    <p>Built optimized models for efficient job scheduling on uniform parallel machines.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Blood Clot Disease Detection</h3>
+                    <p>Implemented machine learning solutions to classify blood clots and detect anomalies.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Doctor Appointment System (MERN Stack)</h3>
+                    <p>Designed a website for patient scheduling systems using the MERN stack.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container-fluid">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+               
+                <p><i class="fa-solid fa-paper-plane"></i><a href="mailto:keerthiraikar666@gmail.com">keerthiraikar666@gmail.com</a></p>
+                <p><i class="fa-solid fa-square-phone"></i> +91 9916340030</p>
+                <div class="social-icons">
+                    <a href="https://github.com/01fe22bca209"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/keerthi-raikar-4771ab25b/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="Resume1 (1) (1).pdf" download class="btn2">Download CV <i class="fa-solid fa-file-arrow-down"></i></a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Enter your name" required>
+                    <input type="email" name="Email" placeholder="Enter your email" required>
+                    <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                    <button type="submit" class="btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
